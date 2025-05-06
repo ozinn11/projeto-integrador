@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zVulny - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="login-box">
+                <img src="logo.svg" alt="zVulny Logo" class="logo">
+                <h1 class="title">zVulny</h1>
+                <p class="subtitle">slogan top aqui</p>
+
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Usuário" class="input" />
+                </div>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="Senha" class="input" />
+                </div>
+
+                <button class="login-btn">Entrar</button>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <!-- Curva com traço fino e gradiente correto -->
+            <svg class="curve-line" viewBox="0 0 1000 600" preserveAspectRatio="none">
+                <defs>
+                    <linearGradient id="gradLine" x1="0%" y1="0%" x2="60%" y2="100%">
+                        <stop offset="35%" stop-color="#0F17A9" />
+                        <stop offset="95%" stop-color="#8CCBFE" />
+                    </linearGradient>
+                </defs>
+                <path d="M 0 536 C 371 545 749 316 1090 11 " stroke="url(#gradLine)" stroke-width="3" fill="none" />
+            </svg>
+        </div>
+
+        <div class="wave-svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 989 187" fill="none">
+                <defs>
+                    <linearGradient id="paint0_linear_2060_2" x1="621.381" y1="-66.4029" x2="549.497" y2="458.049"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.041118" stop-color="#5DC0F2" />
+                        <stop offset="1" stop-color="#2446CE" />
+                    </linearGradient>
+                </defs>
+                <path
+                    d="M789.753 0.875895C886.626 9.62214 936.253 117.198 989 187L0 187C20.2625 154.622 74.0062 86.5722 178.985 52.5964C310.208 10.1267 372.403 46.3218 445.774 62.6882C547.568 85.3949 668.66 -10.0569 789.753 0.875895Z"
+                    fill="url(#paint0_linear_2060_2)" />
+            </svg>
+        </div>
+    </div>
+</body>
+
+</html>
