@@ -21,7 +21,7 @@ html {
 
 .left-side {
   position: relative;
-  width: 49%;
+  width: 50%;
   background: white;
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@ html {
 }
 
 .input-wrapper {
-  padding: 2px;
+  padding: 3px;
   background: linear-gradient(90deg, #1E3A70, #2F6FE4);
   border-radius: 10px;
 }
@@ -95,7 +95,7 @@ html {
   position: absolute;
   bottom: 0;
   right: 0; /* A wave começa no canto esquerdo */
-  width: 152%; /* A wave agora vai ultrapassar 100% da tela, indo para a direita */
+  width: 150%; /* A wave agora vai ultrapassar 100% da tela, indo para a direita */
   height: 210px;
   transform: translateY(20px); /* Levanta um pouco a wave */
   z-index: 5;
@@ -109,13 +109,13 @@ html {
 }
 
 .right-side {
-  width: 53%;
+  width: 50%;
   background: linear-gradient(to bottom right, #1e3ad1, #2fb1f2);
   position: relative;
   overflow: hidden;
   display: flex; /* Adiciona flexbox para alinhar o conteúdo */
   justify-content: flex-start; /* Alinha o conteúdo à esquerda */
-  
+  align-items: flex-end; /* Alinha o conteúdo na parte inferior */
 }
 
 .curved-line-svg {
