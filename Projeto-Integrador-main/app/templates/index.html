@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>zVulny Scanner</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div>
+        <div class="logo-box">
+          <span class="logo"><i class="fas fa-lock"></i> zVulny</span>
+        </div>
+        <div class="menu">
+          <a href="#" class="active"><i class="fas fa-shield-alt"></i> Escanear</a>
+          <div class="divider"></div>
+          <a href="#"><i class="fas fa-sitemap"></i> Mapear</a>
+          <div class="divider"></div>
+          <a href="#"><i class="fas fa-chart-line"></i> Análise</a>
+          <div class="divider"></div>
+          <a href="#"><i class="fas fa-lightbulb"></i> Sugestão</a>
+        </div>
+      </div>
+      <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+    <div class="main-content">
+      <form method="POST" action="/scan">
+        <div class="left-section">
+          <div class="title">Scanner</div>
+
+          <!-- Campo de IP -->
+          <div class="form-section">
+            <input type="text" name="target_ip" placeholder="Digite o IP, faixa (ex: 192.168.1.0/24)" required />
+          </div>
+
+          <div class="form-group">
+            <label for="scan_mode">Selecione o(s) modo(s) de escaneamento:</label>
+            <div class="custom-dropdown">
+              <button type="button" class="dropdown-toggle" onclick="toggleDropdown()">▼ Modo de Escaneamento</button>
+              <div class="dropdown-options" id="checkboxDropdown">
+                <label><input type="checkbox" name="scan_mode_cb[]" value="0"> 0 - Porta Padrão</label>
+                <label><input type="checkbox" name="scan_mode_cb[]" value="1"> 1 - Completo</label>
+                <label><input type="checkbox" name="scan_mode_cb[]" value="2"> 2 - Web</label>
+                <label><input type="checkbox" name="scan_mode_cb[]" value="3"> 3 - Serviços Remotos</label>
+                <label><input type="checkbox" name="scan_mode_cb[]" value="4"> 4 - Bancos de Dados</label>
+                <label><input type="checkbox" name="scan_mode_cb[]" value="5"> 5 - Infraestrutura</label>
+                <label><input type="checkbox" name="scan_mode_cb[]" value="6"> 6 - IoT</label>
+                <label><input type="checkbox" name="scan_mode_cb[]" value="7"> 7 - Vulnerabilidades críticas</label>
+              </div>
+            </div>
+          </div>
+          
+        
+          </div>
+        </select>
+          
+<!-- Seletor de portas -->
+<div class="port-selection">
+  <span>Selecione as portas:</span>
+  <select name="port_select">
+    <option value="">Selecione uma porta (Deixe em branco para não escanear porta específica)</option>
+    <option value="21">21 (FTP)</option>
+    <option value="22">22 (SSH)</option>
+    <option value="23">23 (Telnet)</option>
+    <option value="25">25 (SMTP)</option>
+    <option value="53">53 (DNS)</option>
+    <option value="80">80 (HTTP)</option>
+    <option value="110">110 (POP3)</option>
+    <option value="143">143 (IMAP)</option>
+    <option value="443">443 (HTTPS)</option>
+    <option value="3306">3306 (MySQL)</option>
+    <option value="3389">3389 (RDP)</option>
+    <option value="8080">8080 (HTTP-alt)</option>
+  </select>
+</div>
+
+
+          <button type="submit" class="start-btn">Start</button>
+        </div>
+      </form>
+
+      <div class="right-section">
+        <button class="report-btn">Resumo do scanner</button>
+        <div class="report-box">
+          {% if result %}
+            <pre>{{ result }}</pre>
+            <p>Relatório salvo como: <strong>{{ report_name }}</strong></p>
+          {% else %}
+            -------------------------------------<br />
+            Nenhum relatório disponível<br />
+            -------------------------------------<br />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bloco">
+    <img src="{{ url_for('static', filename='image/Group 17.png') }}" alt="bloquinhos">
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById('checkboxDropdown');
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+  
+    // Fecha o dropdown se clicar fora
+    
+  </script>
+  
+</body>
+</html>
